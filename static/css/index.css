@@ -1,0 +1,236 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.container.is-max-desktop {
+  max-width: 1100px; /* Increase this value as desired */
+}
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.author-link sup {
+  color: #000;
+}
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors sup {
+  font-size: 0.7em;
+  vertical-align: super;
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-video-column {
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}
+
+/* Center the whole image-wrapper div horizontally */
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically if needed */
+  margin: 20px 0;
+  width: 100%; /* Take full width of the container */
+}
+
+/* Style for the label text */
+.image-label {
+  font-size: 1.2em; /* Increase font size */
+  font-weight: bold; /* Make the label bold */
+  color: #333; /* Adjust color to fit your site's theme */
+  margin-bottom: 10px; /* Space between the label and the image */
+  text-align: center; /* Center the label */
+}
+
+/* Style for the image */
+#interpolation-image-wrapper img {
+  max-width: 100%; /* Make sure the image is responsive */
+  height: auto;
+  border: 2px solid #ddd; /* Add a subtle border to the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a light shadow */
+  display: block; /* Ensure image behaves as block-level element */
+  margin: 0 auto; /* Horizontally center the image */
+}
+
+.youtube-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 1500px; /* Set maximum width equal to the iframe width */
+  margin: 0 auto;   /* Center the container horizontally */
+}
+
+.youtube-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* Center comparison videos in their rows */
+.capabilities-video {
+  display: block;
+  max-width: 75%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Align dataset subheadings (RE10K, SPOC) with the centered video panels */
+.capabilities-heading {
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Narrower videos only inside the 2D Visual Quality section */
+.visual-quality-section .capabilities-video {
+  max-width: 65%;
+}
+.visual-quality-section .capabilities-heading {
+  max-width: 65%;
+}

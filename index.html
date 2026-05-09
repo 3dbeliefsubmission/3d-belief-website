@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="3D-Belief is a 3D generative world model for embodied agent's mental simulation"
+    />
+    <meta name="keywords" content="3D-Belief, Embodied Agent, Mental Simulation" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Embodied Belief Inference via Generative 3D World Modeling
+    </title>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-96FM6LQE7G"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-96FM6LQE7G");
+    </script>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+    <link rel="stylesheet" href="./static/css/index.css" />
+    <link rel="icon" href="./static/images/3d-belief.png" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <style>
+      /* Apply Fancy Fonts */
+      h1,
+      h2.title {
+        font-family: "Cinzel", serif;
+        font-weight: 700;
+      }
+
+      h3.subtitle,
+      h5.title {
+        font-family: "Playfair Display", serif;
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title" style="display: flex; align-items: center; justify-content: center; gap: 0.0em;">
+                <span>3D-Belief: Embodied Belief Inference via Generative 3D World Modeling</span>
+              </h1>
+              <div class="is-size-3 publication-authors">
+                <span>Anonymous Submission</span>
+
+                <div style="margin-top: 1rem;"></div>
+              </div>
+              <!-- <h2 class="subtitle is-4 publication-authors" style="margin-bottom: 0;">
+                Robotics: Science and Systems (RSS) 2025
+              </h2> -->
+              <h2 class="subtitle is-5 publication-authors" style="margin-top: 0;">
+                
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision Results -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width visual-quality-section">
+            <h2 class="title is-3">2D Visual Quality of Belief Prediction</h2>
+            <div class="content has-text-justified">
+              <p>
+                We compare the visual quality of 3D-Belief's predictions against state-of-the-art generative world models on unseen future viewpoints. Each panel shows, from left to right: <strong>Ground Truth</strong>, <strong>3D-Belief (Ours)</strong>, <strong>DFoT</strong>, and <strong>Gen3C</strong> (RE10K) / <strong>NWM</strong> (AI2-THOR). 3D-Belief produces predictions that are more spatially consistent and more faithful to the ground truth than the baselines.
+              </p>
+            </div>
+
+            <h4 class="title is-5 capabilities-heading" style="margin-top: 1rem;">RE10K</h4>
+            <video class="capabilities-video" autoplay muted loop playsinline preload="metadata">
+              <source src="./static/videos/comparisons/imagination_re10k_episode_000006_000013_000062_000070.mp4" type="video/mp4" />
+            </video>
+            <div style="height: 1rem;"></div>
+            <video class="capabilities-video" autoplay muted loop playsinline preload="metadata">
+              <source src="./static/videos/comparisons/imagination_re10k_episode_000092_000017_000069_000073.mp4" type="video/mp4" />
+            </video>
+            <div style="height: 1rem;"></div>
+            <video class="capabilities-video" autoplay muted loop playsinline preload="metadata">
+              <source src="./static/videos/comparisons/imagination_re10k_episode_000131_000000_000037_000079.mp4" type="video/mp4" />
+            </video>
+            <div style="height: 1rem;"></div>
+            <video class="capabilities-video" autoplay muted loop playsinline preload="metadata">
+              <source src="./static/videos/comparisons/imagination_re10k_episode_000181_000000_000050_000079.mp4" type="video/mp4" />
+            </video>
+            <div style="height: 1rem;"></div>
+            <video class="capabilities-video" autoplay muted loop playsinline preload="metadata">
+              <source src="./static/videos/comparisons/imagination_re10k_episode_000187_000032_000072_000086.mp4" type="video/mp4" />
+            </video>
+            <div style="height: 1rem;"></div>
+            <video class="capabilities-video" autoplay muted loop playsinline preload="metadata">
+              <source src="./static/videos/comparisons/imagination_re10k_episode_000658_000000_000057_000079.mp4" type="video/mp4" />
+            </video>
+
+            <h4 class="title is-5 capabilities-heading" style="margin-top: 1.5rem;">AI2-THOR</h4>
+            <video class="capabilities-video" autoplay muted loop playsinline preload="metadata">
+              <source src="./static/videos/comparisons/imagination_spoc_episode_000057_000000_000005_000010.mp4" type="video/mp4" />
+            </video>
+            <div style="height: 1rem;"></div>
+            <video class="capabilities-video" autoplay muted loop playsinline preload="metadata">
+              <source src="./static/videos/comparisons/imagination_spoc_episode_000062_000002_000007_000012.mp4" type="video/mp4" />
+            </video>
+            <div style="height: 1rem;"></div>
+            <video class="capabilities-video" autoplay muted loop playsinline preload="metadata">
+              <source src="./static/videos/comparisons/imagination_spoc_episode_000070_000000_000005_000010.mp4" type="video/mp4" />
+            </video>
+            <div style="height: 1rem;"></div>
+            <video class="capabilities-video" autoplay muted loop playsinline preload="metadata">
+              <source src="./static/videos/comparisons/imagination_spoc_episode_000076_000000_000005_000010.mp4" type="video/mp4" />
+            </video>
+            <div style="height: 1rem;"></div>
+            <video class="capabilities-video" autoplay muted loop playsinline preload="metadata">
+              <source src="./static/videos/comparisons/imagination_spoc_episode_000097_000033_000038_000044.mp4" type="video/mp4" />
+            </video>
+            <div style="height: 1rem;"></div>
+            <video class="capabilities-video" autoplay muted loop playsinline preload="metadata">
+              <source src="./static/videos/comparisons/imagination_spoc_scene_114_s28_e39.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3D-CORE -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">3D Object and Scene Imagination</h2>
+            <h3 class="title is-4" style="margin-top: 1.25rem;">Object Completion</h3>
+            <video
+              class="capabilities-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            >
+              <source src="./static/videos/obj_comp_1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div style="height: 2rem;"></div>
+            <video
+              class="capabilities-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            >
+              <source src="./static/videos/obj_comp_2.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div style="height: 2rem;"></div>
+            <video
+              class="capabilities-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            >
+              <source src="./static/videos/obj_comp_3.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <h3 class="title is-4" style="margin-top: 1.25rem;">Room Completion</h3>
+            <video
+              class="capabilities-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            >
+              <source src="./static/videos/room_comp_1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div style="height: 2rem;"></div>
+            <video
+              class="capabilities-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            >
+              <source src="./static/videos/room_comp_2.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <h3 class="title is-4" style="margin-top: 1.25rem;">Object Permanence</h3>
+            <figure style="margin-top: 1.5rem; text-align: center;">
+              <img
+                src="./static/images/obj_perm.png"
+                alt="Qualitative Results of the the Object Permanence Task in 3D-CORE"
+                style="max-width: 100%; height: auto; border-radius: 12px;"
+              />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Object Navigation Tasks -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Belief-Guided Planning</h2>
+            <div class="content has-text-justified">
+              <p>
+                We evaluate 3D-Belief on open-vocabulary object navigation tasks in the AI2-THOR simulator, where an agent must find a specified target object in a previously unseen environment.
+              </p>
+            </div>
+            <h3 class="title is-4" style="margin-top: 1.25rem; margin-bottom: 1rem;">
+              Planning with Inference-Time Scaling
+            </h3>
+            <div class="content has-text-justified">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source
+                    src="./static/videos/planning.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </div>
+            <h3 class="title is-4" style="margin-top: 1.25rem; margin-bottom: 1rem;">
+              Qualitative Results
+            </h3>
+            <div style="height: 2rem;"></div>
+            <div class="content has-text-justified">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source
+                    src="./static/videos/simulated.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Real-World Results -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Real-World Results</h2>
+            <div class="content has-text-justified">
+              <p>
+                We evaluate 3D-Belief on a real mobile manipulation platform (Hello Robot Stretch) in a mock apartment environment. Note that the environments, 
+                objects, and target descriptions are all unseen during training, making this a real-world open-vocabulary object navigation setting.
+              </p>
+            </div>
+            <h3 class="title is-4" style="margin-top: 1.25rem;">Example Setup</h3>
+            <div class="container is-max-desktop">
+              <div class="columns is-centered">
+                <div class="column is-full-width">
+                  <img
+                    src="./static/images/real.png"
+                    class="capabilities-image"
+                    alt="Real-World Setup"
+                  />
+                </div>
+              </div>
+            </div>
+            <h3 class="title is-4" style="margin-top: 1.25rem;">Qualitative Results</h3>
+            <p class="subtitle is-5"
+              style="margin-bottom: 0px; min-height: 50px; display: flex; align-items: center; justify-content: flex-start; text-align: left;">
+              <span>Open-Vocabulary Object Navigation: <em>Search for a <strong>mug</strong>.</em></span>
+            </p>
+
+            <!-- Video Row -->
+            <div class="columns is-centered">
+              <!-- Video 1: 3D-Belief -->
+              <div class="column is-half">
+                <div class="video-container">
+                  <video autoplay controls muted loop playsinline width="100%">
+                    <source
+                      src="./static/videos/episode_6_3d_belief.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <p
+                    class="caption has-text-centered"
+                    style="margin-top: 5px; font-size: 1.2rem; font-weight: 500;"
+                  >
+                    3D-Belief (Success)
+                  </p>
+                </div>
+              </div>
+
+              <!-- Video 2: Gemini-3.0 Agent -->
+              <div class="column is-half">
+                <div class="video-container">
+                  <video autoplay controls muted loop playsinline width="100%">
+                    <source
+                      src="./static/videos/episode_0_gemini.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <p
+                    class="caption has-text-centered"
+                    style="margin-top: 5px; font-size: 1.2rem; font-weight: 500;"
+                  >
+                    Gemini-3.0 Agent (Failed - Collision)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Conclusion</h2>
+            <div class="content has-text-justified">
+              <p>
+                In this work, we studied how generative world models can better support embodied reasoning and planning, 
+                and identified key capabilities for practical 3D belief modeling. We then proposed 3D-Belief, which predicts 
+                unseen regions in an explicit 3D representation from partial observations and updates this belief online. 
+                Experimental results on contextual reasoning and object navigation have shown that 3D-Belief improved both 
+                success rate and efficiency over existing generative world models. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
